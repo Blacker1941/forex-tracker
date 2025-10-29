@@ -1,0 +1,47 @@
+.about-container {
+  padding: 30px;
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #1e1e1e;
+  color: #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  line-height: 1.6;
+}
+
+.about-container h1 {
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-align: center;
+}
+
+.market-list, .tech-list {
+  list-style: none;
+  padding: 0;
+}
+
+.market-list li, .tech-list li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.market-list li:hover, .tech-list li:hover {
+  transform: translateX(6px);
+  color: #ffcc00;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+
+.icon.forex { color: #00bcd4; }
+.icon.gold { color: #f4c542; }
+.icon.crypto { color: #f7931a; }
+.icon.react { color: #61dafb; }
+.icon.chart { color: #00e676; }
+.icon.api { color: #03a9f4; }
+.icon.layout { color: #9c27b0; }

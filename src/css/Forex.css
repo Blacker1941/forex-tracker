@@ -1,0 +1,131 @@
+.forex-container {
+  padding: 30px;
+  color: #eaeaea;
+  background: #0b0c10;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.forex-container h1 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+  color: #f4f4f4;
+}
+
+.update-time {
+  margin-bottom: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.forex-buttons {
+  margin-bottom: 25px;
+}
+
+.forex-buttons button {
+  background: #1f2833;
+  border: 1px solid #00c49f;
+  color: #c5c6c7;
+  padding: 10px 20px;
+  margin: 0 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.forex-buttons button:hover {
+  background: #00c49f;
+  color: #0b0c10;
+}
+
+.forex-buttons .active {
+  background: #00c49f;
+  color: #0b0c10;
+  font-weight: bold;
+}
+
+.icon {
+  vertical-align: middle;
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.icon.eur {
+  color: #0077be;
+}
+
+.icon.gbp {
+  color: #b0c4de;
+}
+
+.icon.jpy {
+  color: #f0e68c;
+}
+
+.icon.cad {
+  color: #ff6347;
+}
+
+.icon.chf {
+  color: #8a2be2;
+}
+
+.chart-title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #66fcf1;
+  font-size: 1.2rem;
+}
+
+.chart-wrapper {
+  background: #1f2833;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+.forex-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1f2833;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.forex-table th,
+.forex-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #333;
+}
+
+.forex-table th {
+  background: #0b0c10;
+  color: #66fcf1;
+  font-weight: 600;
+}
+
+.forex-table td {
+  color: #c5c6c7;
+}
+
+.forex-table tr:hover {
+  background: #162027;
+  transition: background 0.3s;
+}
+
+.error-text {
+  color: #ff5555;
+  font-weight: bold;
+  text-align: center;
+}
+
+.loading-text {
+  color: #00c49f;
+  font-weight: 500;
+  text-align: center;
+}

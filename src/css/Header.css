@@ -1,0 +1,26 @@
+.header {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2833; 
+  color: #eaeaea;
+  border-bottom: 1px solid #0b0c10;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header-version {
+  font-size: 0.9rem;
+  color: #66fcf1;
+  background: #0b0c10;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}

@@ -11,7 +11,6 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        {/* Layout به عنوان parent route */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="gold" element={<Gold />} />

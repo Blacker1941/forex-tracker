@@ -5,10 +5,9 @@ import {
 import { GiGoldBar } from "react-icons/gi";
 import "../css/Gold.css";
 
-
 interface GoldDataPoint {
-  time: string; 
-  date: string; 
+  time: string;
+  date: string;
   price: number;
 }
 
@@ -32,7 +31,14 @@ export default function Gold() {
         const json = await res.json();
         console.log(json);
 
-        if (!json.rates?.XAU) throw new Error("Price not found in API response");
+        // ✅ گرفتن قیمت درست
+        const rate = json.rates?.USDXAU
+          ? json.rates.USDXAU
+          : json.rates?.XAU
+          ? 1 / json.rates.XAU
+          : null;
+
+        if (!rate) throw new Error("Gold price not found in API response");
 
         const now = new Date();
         const nowTime = now.toLocaleTimeString();
@@ -40,10 +46,10 @@ export default function Gold() {
         const newPoint: GoldDataPoint = {
           time: nowTime,
           date: now.toLocaleDateString(),
-          price: json.rates.XAU
+          price: rate
         };
 
-        setData(prev => [...prev, newPoint].slice(-120)); 
+        setData(prev => [...prev, newPoint].slice(-120));
         setLastUpdate(`Real-time gold price (USD per ounce) — Last update: ${nowTime}`);
       } catch (err) {
         setError((err as Error).message);
@@ -57,7 +63,6 @@ export default function Gold() {
 
   if (error) return <p className="error-text">⚠️ {error}</p>;
   if (!data.length) return <p className="loading-text">Loading gold data...</p>;
-  
 
   return (
     <div className="gold-container">
@@ -69,8 +74,11 @@ export default function Gold() {
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" stroke="#444" />
             <XAxis dataKey="time" tick={{ fill: "#ccc" }} />
-            <YAxis tick={{ fill: "#ccc" }} domain={["auto","auto"]} />
-            <Tooltip contentStyle={{ backgroundColor: "#111", border: "1px solid #444", color: "#fff" }} formatter={(value: number) => `$${value.toFixed(2)}`} />
+            <YAxis tick={{ fill: "#ccc" }} domain={["auto", "auto"]} />
+            <Tooltip
+              contentStyle={{ backgroundColor: "#111", border: "1px solid #444", color: "#fff" }}
+              formatter={(value: number) => `$${value.toFixed(2)}`}
+            />
             <Line type="monotone" dataKey="price" stroke="#FFD700" strokeWidth={2} dot={false} />
           </LineChart>
         </ResponsiveContainer>
